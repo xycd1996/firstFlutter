@@ -31,7 +31,7 @@ class _TabBarRoute extends State<TabBarRoute> with SingleTickerProviderStateMixi
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.share),
-            onPressed: null,
+            onPressed: () => Navigator.pushNamed(context, 'state'),
           )
         ],
         leading: new Builder(builder: (context) {
@@ -83,5 +83,7 @@ class _TabBarRoute extends State<TabBarRoute> with SingleTickerProviderStateMixi
     _tabController.animateTo(index);
   }
 
-  void _onAdd() {}
+  void _onAdd() {
+    Navigator.pushNamed(context, 'route1', arguments: 'hi');
+  }
 }
